@@ -1,6 +1,6 @@
-BEGIN;
+CREATE DATABASE tech_challenge;
 
-CREATE DATABASE IF NOT EXISTS tech-challenge
+\c tech_challenge;
 
 CREATE TYPE order_status AS ENUM ('recebido', 'em preparação', 'pronto', 'finalizado');
 
@@ -63,11 +63,9 @@ ALTER TABLE IF EXISTS "order"
     ON DELETE NO ACTION
     NOT VALID;
 
-INSERT INTO product_category (name) 
-VALUES 
+INSERT INTO product_category (name)
+VALUES
   ('lanche'),
   ('acompanhamento'),
   ('bebida'),
   ('sobremesa');
-
-END;
