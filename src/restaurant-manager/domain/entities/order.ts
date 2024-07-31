@@ -1,6 +1,3 @@
-import { TableName } from "@/restaurant-manager/ports/utils/enums"
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
-
 export enum OrderStatus {
   WaitingPayment = 'pagamento pendente',
   Received = 'recebido',
@@ -144,34 +141,4 @@ export type OrderServiceResponse = {
   message?: string;
   order?: Order;
   orders?: Order[] | null;
-}
-
-@Entity({ name: TableName.ORDER })
-export class OrderTable {
-  @PrimaryGeneratedColumn()
-  id?: number;
-
-  @Column({ nullable: true })
-  customerId?: number;
-
-  @Column({ name: 'paymentId', nullable: false })
-  paymentId?: string;
-
-  @Column()
-  command!: number;
-
-  @Column({ type: 'enum', enum: OrderStatus })
-  orderStatus!: OrderStatus;
-
-  @Column('decimal', { precision: 10, scale: 2 })
-  totalPrice!: number;
-
-  @Column("jsonb")
-  items!: OrderItem[];
-
-  @Column("jsonb")
-  orderUpdatedAt!: OrderUpdateInfo[];
-
-  @Column()
-  createdAt!: Date;
 }

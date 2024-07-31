@@ -1,29 +1,7 @@
-import { TableName } from '@/restaurant-manager/ports/utils/enums';
 import { AppDataSource } from '..';
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
 import { CustomerRepositoryPort } from '@/restaurant-manager/ports/postgres/customer';
 import { Customer } from '@/restaurant-manager/domain/entities/customer';
-
-@Entity({ name: TableName.CUSTOMER })
-export class CustomerTable {
-  @PrimaryGeneratedColumn()
-  id?: number;
-
-  @Column()
-  name!: string;
-
-  @Column({
-    length: 11,
-    unique: true
-  })
-  cpf!: string;
-
-  @Column('text')
-  email!: string;
-
-  @CreateDateColumn()
-  created_at?: Date;
-}
+import { CustomerTable } from './tables';
 
 export class CustomerRepository implements CustomerRepositoryPort {
   async save(customer: Customer): Promise<Customer> {

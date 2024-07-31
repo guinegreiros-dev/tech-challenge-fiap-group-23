@@ -1,8 +1,6 @@
 import { DATABASE_HOST, DATABASE_PORT, DATABASE_USER, DATABASE_PASSWORD, DATABASE } from 'env';
 import { DataSource } from 'typeorm';
-import { CustomerTable } from './postgres/customer';
-import { ProductTable } from '@/restaurant-manager/domain/entities/product';
-import { OrderTable } from '@/restaurant-manager/domain/entities/order';
+import { CustomerTable, OrderTable, ProductTable } from './postgres/tables';
 
 export const AppDataSource = new DataSource({
   type: 'postgres',

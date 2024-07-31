@@ -1,8 +1,7 @@
-import { TableName } from '@/restaurant-manager/ports/utils/enums';
 import { AppDataSource } from '..';
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { ProductRepositoryPort } from '@/restaurant-manager/ports/postgres/product';
-import { Product, ProductTable } from '@/restaurant-manager/domain/entities/product';
+import { Product } from '@/restaurant-manager/domain/entities/product';
+import { ProductTable } from './tables';
 
 export class ProductRepository implements ProductRepositoryPort {
   async save(product: Product): Promise<number | undefined> {

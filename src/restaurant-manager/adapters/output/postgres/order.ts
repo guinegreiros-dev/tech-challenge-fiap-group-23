@@ -1,6 +1,7 @@
 import { AppDataSource } from '..';
 import { OrderRepositoryPort } from '@/restaurant-manager/ports/postgres/order';
-import { Order, OrderStatus, OrderTable } from '@/restaurant-manager/domain/entities/order';
+import { Order, OrderStatus } from '@/restaurant-manager/domain/entities/order';
+import { OrderTable } from './tables';
 
 export class OrderRepository implements OrderRepositoryPort {
   private repository = AppDataSource.getRepository(OrderTable);
