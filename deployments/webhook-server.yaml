@@ -51,7 +51,7 @@ spec:
     name: webhook-api
   minReplicas: 1
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 50
+  targetCPUUtilizationPercentage: 70
 ---
 apiVersion: v1
 kind: Service

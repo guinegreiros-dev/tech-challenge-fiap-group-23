@@ -42,7 +42,7 @@ The entire infrastructure is configured in Docker Kubernetes. Containing scalabi
 
 ## Demonstration video
 
-youtube.link
+[Apresentação Tech Challenge - fase 2](https://drive.google.com/file/d/1mo1RIaPL341BUjGpTYjrGf-n7Rykzgev/view?usp=drive_link)
 
 ## Requirements
 - Docker Desktop v25.0.3;
@@ -57,9 +57,13 @@ youtube.link
 docker-compose up
 ```
 
-2. The aplication will be running on port: `8080`
+2. The aplication will be running on port: `8080`.
 
-3. To access swagger and test the endpoint, use the route `/api-docs` (http://localhost:8080/api-docs)
+3. To access swagger and test the endpoint, use the route `/api-docs`.
+
+- To restaurant-api:(http://localhost:8080/api-docs);
+- To mercadopago:(http://localhost:3004/api-docs);
+- To webhook:(http://localhost:9002/api-docs).
 
 4. Run this command in root directory to stops and removes the container:
 
@@ -73,6 +77,16 @@ docker-compose down
 kubectl apply -f deployments/
 ```
 
-2. The aplication will be running on port: `30001`
+2. The restaurant aplication will be running on port: `30001`.
 
-3. To access swagger and test the endpoint, use the route `/api-docs` (http://localhost:30001/api-docs)
+3. To access swagger and test the endpoint, use the route `/api-docs`.
+
+- To restaurant-api:(http://localhost:30001/api-docs);
+- To mercadopago:(http://localhost:30003/api-docs);
+- To webhook:(http://localhost:30004/api-docs).
+
+4. Run this command in root directory to stops and removes the container:
+
+```bash
+kubectl delete all --all
+```
